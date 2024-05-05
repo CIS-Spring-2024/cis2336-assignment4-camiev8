@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>Checkout</title>
+</head>
+
+<!--Top nav-->
+<header>
+    <!-- Top nav style -->
+    <style>
+    /* Style the navigation bar */
+        header {
+            color:#000;
+            position: fixed; /* Ensure the header remains fixed at the top of the viewport */
+            top: 0;
+            left: 0;
+            width: 100%; /* Make the header span the full width of the viewport */
+            height: auto;
+            z-index: 8; /* Ensure the header appears above other elements on the page */
+        }
+        .topnav {
+            background-color: #fff; /* White background */
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        /* Style the logo */
+        .logo img {
+            height: 40px; /* Adjust height for larger logo */
+            width: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Add some spacing between logo and links */
+        }
+        /* Style the hamburger icon */
+        .hamburger {
+            display: none; /* Hide by default on larger screens */
+            position: absolute; /* Position it absolutely within the navigation bar */
+            cursor: pointer;
+            top: 20px;
+            left: 20px;
+            z-index: 11;
+            color:black;
+        }
+        
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            color: #000; /* Black text */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative;
+        }
+        .topnav a:hover {
+            background-color: #ddd; /* Gray background on hover */
+        }
+        /* Create the moving bar */
+        .topnav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px; 
+            background-color: #000; /* Color of the moving bar */
+            transition: width 0.3s ease-in-out;
+        }
+        /* Change the color of links on hover and animate the moving bar */
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+            
+        }
+    
+    /* Style the tabs */
+        /* Style the dropdown container */
+        .dropdown {
+            color:#000;
+            position: relative;
+            z-index: 5;
+        }
+        /* Style the dropdown button */
+        .dropbtn {
+            color:#000;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        /* Style the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 5;
+        }
+
+        /* Style the links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show the dropdown content when hovering over the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block; 
+        }
+    
+        /* Media query for smaller screens */
+        @media screen and (max-width: 800px) {
+            .dropdown {
+                display: none;
+            }
+            .dropdown-content {
+                z-index: 10; /* Ensure dropdown content appears below the hamburger icon */
+            }
+            .topnav a {
+                display: none; /* Hide links on smaller screens */
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon on smaller screens */
+            }
+
+        }
+    </style>
+    
+    <!-- Top nav content -->
+    <div class="topnav">
+        <div class="logo">
+            <a href="../homepage/homepage.html" >
+                <img src="your-logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">About Us</button>
+            <div class="dropdown-content">
+                <a href="../About/about.html"> Overview </a>
+                <a href="../Mission/mission.html"> Our Values</a>
+            </div>
+        </div>
+        <a href="../Services/services.html"class="active">Services</a>
+        <a href="../Blogs/blogs.html">Blogs</a>
+        <a href="../Contact/contact.html">Contact</a>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
+    </div> 
+
+    <!-- Top nav script -->
+    <script>
+        // Function to toggle responsive class on the top navigation
+        function toggleMenu() {
+            var x = document.querySelector(".topnav");
+            if (x.classList.contains("responsive")) {
+                x.classList.remove("responsive");
+            } else {
+                x.classList.add("responsive");
+            }
+        }
+
+        
+        // Function to show dropdown content
+        function showDropdown() {
+            var dropdownContent = this.querySelector('.dropdown-content');
+            dropdownContent.style.display = 'block';
+        }
+    
+        // Function to hide dropdown content
+        function hideDropdown() {
+            var dropdownContent = this.querySelector('.dropdown-content');
+            dropdownContent.style.display = 'none';
+        }
+    
+        // Get all dropdowns
+        var dropdowns = document.querySelectorAll('.dropdown');
+    
+        // Add event listeners to each dropdown
+        dropdowns.forEach(function(dropdown) {
+            dropdown.addEventListener('mouseenter', showDropdown);
+            dropdown.addEventListener('mouseleave', hideDropdown);
+        });
+    
+        // Hide dropdown content initially on smaller screens
+        window.addEventListener('resize', function() {
+            var dropdownContents = document.querySelectorAll('.dropdown-content');
+            if (window.innerWidth <= 600) {
+                dropdownContents.forEach(function(dropdownContent) {
+                    dropdownContent.style.display = 'none';
+                });
+            } else {
+                dropdownContents.forEach(function(dropdownContent) {
+                    dropdownContent.style.display = ''; // Reset display
+                });
+            }
+        });
+    </script>
+    
+</header>
+
+
+<!--Bodyodyodyody-->
+<body>
+    <div class="container">
+        <div class="checkout form">
+            <form id="orderForm" action="order-confirmation.html" method="POST"> <!-- Updated action attribute -->
+                <div class="row">
+                    <div class="col">
+                        <h3 class="title">Billing Address</h3>
+                        <div class="inputBox">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="inputBox">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" placeholder="Enter email address" required>
+                        </div>
+                        <div class="inputBox">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" placeholder="Enter address" required>
+                        </div>
+                        <div class="inputBox">
+                            <label for="city">City:</label>
+                            <input type="text" id="city" placeholder="Enter city" required>
+                        </div>
+                        <div class="flex">
+    
+                            <div class="inputBox">
+                                <label for="state">State:</label>
+                                <input type="text" id="state" placeholder="Enter state" required>
+                            </div>
+    
+                            <div class="inputBox">
+                                <label for="zip">Zip Code:</label>
+                                <input type="number" id="zip" placeholder="123 456" required>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="col">
+                        <h3 class="title">Payment</h3>
+    
+                        <div class="inputBox">
+                            <label for="name">Card Accepted:</label>
+                            <img src="https://i.ibb.co/X38b5PF/card-img.png" alt="">
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="cardName">Name On Card:</label>
+                            <input type="text" id="cardName" placeholder="Enter card name" required>
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="cardNum">Credit Card Number:</label>
+                            <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required>
+                        </div>
+    
+                        <div class="inputBox">
+                            <label for="">Exp Month:</label>
+                            <select name="" id="">
+                                <option value="">Choose month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+    
+    
+                        <div class="flex">
+                            <div class="inputBox">
+                                <label for="">Exp Year:</label>
+                                <select name="" id="">
+                                    <option value="">Choose Year</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                </select>
+                            </div>
+    
+                            <div class="inputBox">
+                                <label for="cvv">CVV</label>
+                                <input type="number" id="cvv" placeholder="1234" required>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <input type="submit" value="Proceed to Checkout" class="submit_btn" >
+            </form>
+    
+        </div>
+    </div>
+    
+<!-- Body Styling-->
+    <style>
+    /* Style the body */
+        body {
+        background-color: black; /* Set the background color of the entire page to black */
+        color: white; /* Set the default text color to white */
+        margin: auto; /* Remove default margin */
+        padding-top: 100px; /* Remove default padding */
+        }
+
+    /* Style for checkout container */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+            transition: all 0.2s linear;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 25px;
+        }
+
+        .container form {
+            width: 700px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .container form .row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .container form .row .col{
+            flex: 1 1 250px;
+        }
+
+        .col .title{
+            font-size: 20px;
+            color: black;
+            padding-bottom: 5px;
+        }
+
+        .col .inputBox{
+            margin: 15px 0;
+        }
+
+        .col .inputBox label{
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .col .inputBox input, .col .inputBox select{
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            font-size: 15px;
+        }
+
+        .col .inputBox input:focus, .col .inputBox select:focus{
+            border: 1px solid #000;
+        }
+
+        .col .flex{
+            display: flex;
+            gap: 15px;
+        }
+
+        .col .flex .inputBox{
+            flex: 1 1;
+            margin-top: 5px;
+        }
+
+        .col .inputBox img{
+            height: 34px;
+            margin-top: 5px;
+            filter: drop-shadow(0 0 1px #000);
+        }
+
+        .container form .submit_btn{
+            width: 100%;
+            padding: 12px;
+            font-size: 17px;
+            background: black;
+            color: #fff;
+            margin-top: 5px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .container form .submit_btn:hover{
+            background: whitesmoke;
+        }
+
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button{
+            display: none;
+        }
+
+    </style>
+
+
+<!-- Body Script-->
+<script>
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        console.log("Form submitted!"); // Debugging statement
+        
+        // You can add additional form validation here
+        
+        // Redirect to the order confirmation page
+        window.location.href = "order-confirmation.html";
+    });
+</script>
+</body>
+
+<!-- Footer -->
+<footer>
+    <div class="logo-container">
+        <img src="your-logo.png" alt="Logo" class="footer-logo"> <!-- logo -->
+        <!-- sign up form-->
+        <form class="signup-form">
+            <input type="email" class="signup-input" placeholder="Enter your email">
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+    </div>
+    <!-- sitemap-->
+    <ul class="sitemap">
+        <li><a href="../Homepage/homepage.html">Home</a></li>
+        <li><a href="../About/about.html">About</a></li>
+        <li><a href="../Services/services.html"class="active">Services</a></li>
+        <li><a href="../Blogs/blogs.html">Blogs</a></li>
+        <li><a href="../Contact/contact.html">Contact</a></li>
+    </ul>
+    </form>
+    <style>
+        /* Style the footer */
+        footer {
+                background-color: white; /* Light background */
+                color: black; /* Black text */
+                padding: 20px;
+                text-align: right; /* Align text to the right */
+                position: bottom absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                box-sizing: border-box; /* Include padding and border in the total width/height */
+                display: flex;
+                justify-content: space-between; /* Align items to each end */
+                align-items: center; /* Center items vertically */
+            }
+    
+            /* Style the site map */
+            .sitemap {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+            .sitemap li {
+                margin-right: 10px;
+            }
+            .sitemap li a {
+                color: black; /* White text */
+                text-decoration: none;
+            }
+            .sitemap li a:hover {
+                text-decoration: underline;
+            }
+            /* Style the logo container */
+            .logo-container {
+                display: flex;
+                align-items: center;
+            }
+
+             /* Style the logo */
+            .footer-logo {
+                max-width: 100px; /* Limit the maximum width of the logo */
+                height: auto; /* Maintain aspect ratio */
+                margin-right: 20px;
+            }
+    
+             /* Style the sign-up form */
+             .signup-form {
+                display: inline-block;
+                margin-left: 20px;
+            }
+            .signup-input {
+                padding: 8px;
+                border: none;
+                border-radius: 4px;
+                margin-right: 5px;
+                width: 200px;
+            }
+            .signup-button {
+                background-color: grey; /* Grey background */
+                color: white;
+                padding: 8px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .signup-button:hover {
+                background-color: darkgray; /* Darker grey background on hover */
+            }
+    
+            /* Media query for smaller screens */
+            @media screen and (max-width: 300px) {
+                footer {
+                    padding: 10px; /* Reduce padding for smaller screens */
+                }
+            .logo-container,
+                .sitemap {
+                    margin-bottom: 10px; /* Add spacing between the logo and site map on smaller screens */
+                }
+            }
+    
+    </style>
+</footer>
+
+</html>

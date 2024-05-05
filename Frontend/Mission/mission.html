@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <title>Mission</title>
+</head>
+
+<!--Top nav-->
+<header>
+    <!-- Top nav content -->
+    <div class="topnav">
+        <div class="logo">
+            <a href="../homepage/homepage.html" class="active">
+                <img src="your-logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">About Us</button>
+            <div class="dropdown-content">
+                <a href="../About/about.html"> Overview </a>
+                <a href="../Mission/mission.html"> Our Values</a>
+            </div>
+        </div>
+        <a href="../Services/services.html">Services</a>
+        <a href="../Blogs/blogs.html">Blogs</a>
+        <a href="../Contact/contact.html">Contact</a>
+        <div class="hamburger">&#9776;</div>
+    </div> <!-- Hamburger icon -->
+    <!-- Top nav style -->
+    <style>
+    /* Style the navigation bar */
+        header {
+            position: fixed; /* Ensure the header remains fixed at the top of the viewport */
+            top: 0;
+            left: 0;
+            width: 100%; /* Make the header span the full width of the viewport */
+            height: auto;
+            z-index: 999; /* Ensure the header appears above other elements on the page */
+        }
+        .topnav {
+            background-color: #fff; /* White background */
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        /* Style the logo */
+        .logo img {
+            height: 40px; /* Adjust height for larger logo */
+            width: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Add some spacing between logo and links */
+        }
+        /* Style the hamburger icon */
+        .hamburger {
+            display: none; /* Hide by default on larger screens */
+            cursor: pointer;
+        }
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            color: #000; /* Black text */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative;
+        }
+        .topnav a:hover {
+            background-color: #ddd; /* Gray background on hover */
+        }
+        /* Create the moving bar */
+        .topnav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px; /* Adjust height as needed */
+            background-color: #000; /* Color of the moving bar */
+            transition: width 0.3s ease-in-out;
+        }
+        /* Change the color of links on hover and animate the moving bar */
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+            
+        }
+
+    /* Style the tabs */
+        /* Style the dropdown container */
+        .dropdown {
+            position: relative;
+            z-index: 999;
+        }
+        /* Style the dropdown button */
+        .dropbtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        /* Style the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        /* Style the links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show the dropdown content when hovering over the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            
+        }
+
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                display: none; /* Hide links on smaller screens */
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon on smaller screens */
+            }
+        }
+    </style>
+
+    <!-- Top nav script -->
+    <script>
+        // Get the "About Us" dropdown and the dropdown content
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        // Add event listeners
+        dropdown.addEventListener('mouseenter', showDropdown);
+        dropdown.addEventListener('mouseleave', hideDropdown);
+
+        // Function to show dropdown
+        function showDropdown() {
+            dropdownContent.style.display = 'block';
+        }
+        // Function to hide dropdown
+        function hideDropdown() {
+            dropdownContent.style.display = 'none';
+        }
+</script>
+
+
+</header>
+
+<body>
+<!-- Body content -->
+    <div>
+        <div class="container">
+            <h1>Our Mission: Our Commitment to Excellence</h1>
+
+            <h2>Our Mission</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+
+            <h2>Our Vision</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+            
+            <h2>Our Goals</h2>
+            <ol class="goals-list">
+                <li><strong>Goal 1:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. </li>
+                <li><strong>Goal 2:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. </li>
+                <li><strong>Goal 3:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. </li>
+            </ol>
+
+            <h2>Our Impact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+
+            <div class="contact-info">
+                <h2>Join Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="social-button">Facebook</a>
+                <a href="#" class="social-button">Twitter</a>
+                <a href="#" class="social-button">LinkedIn</a>
+                <a href="#" class="social-button">Instagram</a>
+            </div>
+
+        </div>
+
+    </div>
+<!-- Body Styling-->
+    <style>
+        /* Style the body */
+        body {
+            background-color: black; /* Set the background color of the entire page to black */
+            color: white; /* Set the default text color to white */
+            margin: auto; /* Remove default margin */
+            padding-top: 100px; /* Remove default padding */
+            }
+        /* Center all texts */
+        h1, h2, h3 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            padding: 0 20px; 
+        }
+        
+        /* Center the social links */
+        /* Center the social links */
+        .social-links {
+            text-align: center;
+            margin-top: 20px; /* Add some space between the content and social links */
+        }
+
+        /* Style the social link buttons */
+        .social-links a {
+            display: inline-block; /* Display as inline block to respect padding and width */
+            background-color: white; /* White background color */
+            color: black; /* Black text color */
+            padding: 10px 20px; /* Adjust padding as needed */
+            border: 1px solid black; /* Add border */
+            border-radius: 5px; /* Rounded corners */
+            margin: 0 5px; /* Add space between buttons */
+            text-decoration: none; /* Remove underline */
+            cursor: pointer;
+        }
+
+        /* Hover effect */
+        .social-links a:hover {
+            background-color: #ccc; /* Grey background on hover */
+        }
+
+
+        
+
+        
+    </style>
+<!-- JS script-->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active-dot";
+        }
+
+    </script>
+</body>
+
+<!-- Footer -->
+<footer>
+    <div class="logo-container">
+        <img src="your-logo.png" alt="Logo" class="footer-logo"> <!-- logo -->
+        <!-- sign up form-->
+        <form class="signup-form">
+            <input type="email" class="signup-input" placeholder="Enter your email">
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+    </div>
+    <!-- sitemap-->
+    <ul class="sitemap">
+        <li><a href="../Homepage/homepage.html">Home</a></li>
+        <li><a href="../About/about.html">About</a></li>
+        <li><a href="../Services/services.html">Services</a></li>
+        <li><a href="../Blogs/blogs.html">Blogs</a></li>
+        <li><a href="../Contact/contact.html">Contact</a></li>
+    </ul>
+    </form>
+    <style>
+        /* Style the footer */
+        footer {
+                background-color: white; /* Light background */
+                color: black; /* Black text */
+                padding: 20px;
+                text-align: right; /* Align text to the right */
+                position: bottom absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                box-sizing: border-box; /* Include padding and border in the total width/height */
+                display: flex;
+                justify-content: space-between; /* Align items to each end */
+                align-items: center; /* Center items vertically */
+            }
+    
+            /* Style the site map */
+            .sitemap {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+            .sitemap li {
+                margin-right: 10px;
+            }
+            .sitemap li a {
+                color: black; /* White text */
+                text-decoration: none;
+            }
+            .sitemap li a:hover {
+                text-decoration: underline;
+            }
+            /* Style the logo container */
+            .logo-container {
+                display: flex;
+                align-items: center;
+            }
+
+             /* Style the logo */
+            .footer-logo {
+                max-width: 100px; /* Limit the maximum width of the logo */
+                height: auto; /* Maintain aspect ratio */
+                margin-right: 20px;
+            }
+    
+             /* Style the sign-up form */
+             .signup-form {
+                display: inline-block;
+                margin-left: 20px;
+            }
+            .signup-input {
+                padding: 8px;
+                border: none;
+                border-radius: 4px;
+                margin-right: 5px;
+                width: 200px;
+            }
+            .signup-button {
+                background-color: grey; /* Grey background */
+                color: white;
+                padding: 8px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .signup-button:hover {
+                background-color: darkgray; /* Darker grey background on hover */
+            }
+    
+            /* Media query for smaller screens */
+            @media screen and (max-width: 300px) {
+                footer {
+                    padding: 10px; /* Reduce padding for smaller screens */
+                }
+            .logo-container,
+                .sitemap {
+                    margin-bottom: 10px; /* Add spacing between the logo and site map on smaller screens */
+                }
+            }
+    
+    </style>
+</footer>
+</html>
+
+</html>

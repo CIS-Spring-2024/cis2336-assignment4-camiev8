@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <title>About Us</title>
+</head>
+<!--Top nav-->
+<header>
+    <!-- Top nav content -->
+    <div class="topnav">
+        <div class="logo">
+            <a href="../homepage/homepage.html">
+                <img src="your-logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">About Us</button>
+            <div class="dropdown-content">
+                <a href="../About/about.html" class="active"> Overview </a>
+                <a href="../Mission/mission.html"> Our Values</a>
+            </div>
+        </div>
+        <a href="../Services/services.html">Services</a>
+        <a href="../Blogs/blogs.html">Blogs</a>
+        <a href="../Contact/contact.html">Contact</a>
+        <div class="hamburger">&#9776;</div>
+    </div> <!-- Hamburger icon -->
+    <!-- Top nav style -->
+    <style>
+    /* Style the navigation bar */
+        header {
+            position: fixed; /* Ensure the header remains fixed at the top of the viewport */
+            top: 0;
+            left: 0;
+            width: 100%; /* Make the header span the full width of the viewport */
+            height: auto;
+            z-index: 999; /* Ensure the header appears above other elements on the page */
+        }
+        .topnav {
+            background-color: #fff; /* White background */
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        /* Style the logo */
+        .logo img {
+            height: 40px; /* Adjust height for larger logo */
+            width: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Add some spacing between logo and links */
+        }
+        /* Style the hamburger icon */
+        .hamburger {
+            display: none; /* Hide by default on larger screens */
+            cursor: pointer;
+        }
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            color: #000; /* Black text */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative;
+        }
+        .topnav a:hover {
+            background-color: #ddd; /* Gray background on hover */
+        }
+        /* Create the moving bar */
+        .topnav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px; /* Adjust height as needed */
+            background-color: #000; /* Color of the moving bar */
+            transition: width 0.3s ease-in-out;
+        }
+        /* Change the color of links on hover and animate the moving bar */
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+            
+        }
+
+    /* Style the tabs */
+        /* Style the dropdown container */
+        .dropdown {
+            position: relative;
+            z-index: 999;
+        }
+        /* Style the dropdown button */
+        .dropbtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        /* Style the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        /* Style the links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show the dropdown content when hovering over the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            
+        }
+
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                display: none; /* Hide links on smaller screens */
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon on smaller screens */
+            }
+        }
+    </style>
+
+    <!-- Top nav script -->
+    <script>
+        // Get the "About Us" dropdown and the dropdown content
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        // Add event listeners
+        dropdown.addEventListener('mouseenter', showDropdown);
+        dropdown.addEventListener('mouseleave', hideDropdown);
+
+        // Function to show dropdown
+        function showDropdown() {
+            dropdownContent.style.display = 'block';
+        }
+        // Function to hide dropdown
+        function hideDropdown() {
+            dropdownContent.style.display = 'none';
+        }
+</script>
+
+
+</header>
+
+<!---------------------------------------------->
+
+<!-- Body -->
+<body>
+    <div> 
+    <!-- About us section-->
+        <div class="about-section" id="about">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo eu justo vehicula tristique. Nullam id sapien felis. Integer posuere metus non leo sollicitudin, sit amet tincidunt nunc condimentum.</p>
+            <p>Etiam ac mi et nisl finibus suscipit. Proin nec tristique ligula. Nam congue quam nisl, nec dignissim magna pharetra sit amet. Sed maximus eros non augue ullamcorper, eget dapibus urna volutpat.</p>
+            <!-- Button to link to another page -->
+        </div>
+
+        <!-- Philosophy section -->
+        <div class="philosophy-section">
+            <div class="philosophy-text">
+                <h2>Our Philosophy</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget nullam non nisi est sit amet. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Nisl condimentum id venenatis a condimentum vitae sapien. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. In hac habitasse platea dictumst quisque. Elit sed vulputate mi sit amet mauris commodo quis. Aliquet porttitor lacus luctus accumsan tortor posuere. Sagittis aliquam malesuada bibendum arcu. Mi in nulla posuere sollicitudin aliquam ultrices. In massa tempor nec feugiat.</p>
+            </div>
+            <div class="philosophy-photo">
+                <img src="OurPhilosophy.jpg" alt="Our Philosophy Photo">
+            </div>
+        </div>
+
+        <!-- Story section -->
+        <div class="story-section">
+            <div>            
+                <img src="OurStory.jpg" alt="Our Story Photo" class="story-photo">
+            </div>
+            <div class="story-text">
+                <h2>Our Story</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget nullam non nisi est sit amet. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Nisl condimentum id venenatis a condimentum vitae sapien. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. In hac habitasse platea dictumst quisque. Elit sed vulputate mi sit amet mauris commodo quis. Aliquet porttitor lacus luctus accumsan tortor posuere. Sagittis aliquam malesuada bibendum arcu. Mi in nulla posuere sollicitudin aliquam ultrices. In massa tempor nec feugiat.</p>
+            </div>
+            
+            </div>
+        </div>
+
+        <!-- Philosophy section -->
+        <div class="process-section">
+            <div class="process-text">
+                <h2>Our Process</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget nullam non nisi est sit amet. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. Nisl condimentum id venenatis a condimentum vitae sapien. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. In hac habitasse platea dictumst quisque. Elit sed vulputate mi sit amet mauris commodo quis. Aliquet porttitor lacus luctus accumsan tortor posuere. Sagittis aliquam malesuada bibendum arcu. Mi in nulla posuere sollicitudin aliquam ultrices. In massa tempor nec feugiat.</p>
+            </div>
+            <div class="process-photo">
+                <img src="OurPhilosophy.jpg" alt="Our Philosophy Photo">
+            </div>
+        </div>
+        <!-- Button to Missions and Values-->
+        <div>
+            <a href="../Mission/mission.html" class="button">Learn more about us</a> <!-- Added button -->
+        </div>
+    </div>
+    <style>
+    /* Style the body*/
+        body {
+        background-color: black; /* Set the background color of the entire page to black */
+        color: white; /* Set the default text color to white */
+        margin: auto; /* Remove default margin */
+        padding-top: 100px; /* Remove default padding */
+    }
+
+    /* Style the About Us section */
+        .about-section {
+            background-color: white; /* white background for the About Us section */
+            color: Black; /* black text */
+            padding: 20px; /* Add padding for content */
+            margin: 20px auto; /* Center the section horizontally */
+            max-width: 800px; /* Limit maximum width */
+            text-align: center; /* Center the text */
+        }
+
+    /* Style the philosophy section */
+        .philosophy-section {
+            background-color: black;
+            color: white;
+            padding: 20px; /* Add padding for content */
+            margin: 20px auto; /* Center the section horizontally */
+            max-width: 800px; /* Limit maximum width */
+            display: flex; /* Use flexbox layout */
+            align-items: center;
+        }
+        /* Style the photo */
+        .philosophy-photo img {
+            width: 200px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */   
+            margin-left: 20px; /* Add some space between the photo and text */
+            display: flex; /* Use flexbox layout */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+        }
+        /* Style the text */
+        .philosophy-text {
+            padding-left: 20px; /* Add some space between the photo and text */
+        }
+
+    /* Style the Story section */
+        .story-section {
+            background-color: black;
+            color: white;
+            padding: 20px; /* Add padding for content */
+            margin: 20px auto; /* Center the section horizontally */
+            max-width: 700px; /* Limit maximum width */
+            display: flex; /* Use flexbox layout */
+            align-items: center;
+        }
+    /* Style the photo */
+        .story-photo {
+            width: 250px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */   
+            margin-right: 20px; /* Add some space between the photo and text */
+            display: flex; /* Use flexbox layout */
+            align-items: left; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+        }
+        /* Style the text */
+        .story-text {
+            overflow: hidden; /* Clear any floats */
+            text-align: right;
+        }
+        /* Align only the title in the Story section to the right */
+        .story-section h2 {
+            text-align: right; /* Align title to the right */
+        }
+
+    /* Style the Our Process  section */
+        .process-section {
+            background-color: black;
+            color: white;
+            padding: 20px; /* Add padding for content */
+            margin: 20px auto; /* Center the section horizontally */
+            max-width: 800px; /* Limit maximum width */
+            display: flex; /* Use flexbox layout */
+            align-items: center;
+        }
+        /* Style the photo */
+        .process-photo img {
+            width: 200px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */   
+            margin-left: 20px; /* Add some space between the photo and text */
+            display: flex; /* Use flexbox layout */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+        }
+        /* Style the text */
+        .process-text {
+            padding-left: 20px; /* Add some space between the photo and text */
+        }
+
+    /* Style the Missions and Values button */
+        .button {
+        background-color: white; /* Black background */
+        color: black; /* White text */
+        padding: 10px 20px; /* Adjust padding as needed */
+        text-decoration: none; /* Remove underline */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Add some rounded corners */
+        cursor: pointer; /* Show pointer cursor on hover */
+        display: block; /* Make it a block-level element */
+        margin: 20px auto; /* Center the button horizontally */
+        max-width: 200px; /* Limit maximum width */
+        text-align: center; /* Center the text */
+        }
+        .button:hover {
+            background-color: #333; /* Darker background color on hover */
+        }
+
+    </style>
+</body>
+
+<!---------------------------------------------->
+<!-- Footer -->
+<footer>
+    <div class="logo-container">
+        <img src="your-logo.png" alt="Logo" class="footer-logo"> <!-- logo -->
+        <!-- sign up form-->
+        <form class="signup-form">
+            <input type="email" class="signup-input" placeholder="Enter your email">
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+    </div>
+    <!-- sitemap-->
+    <ul class="sitemap">
+        <li><a href="../Homepage/homepage.html">Home</a></li>
+        <li><a href="../About/about.html">About</a></li>
+        <li><a href="../Services/services.html">Services</a></li>
+        <li><a href="../Blogs/blogs.html">Blogs</a></li>
+        <li><a href="../Contact/contact.html">Contact</a></li>
+    </ul>
+    </form>
+    <style>
+        /* Style the footer */
+        footer {
+                background-color: white; /* Light background */
+                color: black; /* Black text */
+                padding: 20px;
+                text-align: right; /* Align text to the right */
+                position: bottom absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                box-sizing: border-box; /* Include padding and border in the total width/height */
+                display: flex;
+                justify-content: space-between; /* Align items to each end */
+                align-items: center; /* Center items vertically */
+            }
+    
+            /* Style the site map */
+            .sitemap {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+            .sitemap li {
+                margin-right: 10px;
+            }
+            .sitemap li a {
+                color: black; /* White text */
+                text-decoration: none;
+            }
+            .sitemap li a:hover {
+                text-decoration: underline;
+            }
+            /* Style the logo container */
+            .logo-container {
+                display: flex;
+                align-items: center;
+            }
+
+             /* Style the logo */
+            .footer-logo {
+                max-width: 100px; /* Limit the maximum width of the logo */
+                height: auto; /* Maintain aspect ratio */
+                margin-right: 20px;
+            }
+    
+             /* Style the sign-up form */
+             .signup-form {
+                display: inline-block;
+                margin-left: 20px;
+            }
+            .signup-input {
+                padding: 8px;
+                border: none;
+                border-radius: 4px;
+                margin-right: 5px;
+                width: 200px;
+            }
+            .signup-button {
+                background-color: grey; /* Grey background */
+                color: white;
+                padding: 8px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .signup-button:hover {
+                background-color: darkgray; /* Darker grey background on hover */
+            }
+    
+            /* Media query for smaller screens */
+            @media screen and (max-width: 300px) {
+                footer {
+                    padding: 10px; /* Reduce padding for smaller screens */
+                }
+            .logo-container,
+                .sitemap {
+                    margin-bottom: 10px; /* Add spacing between the logo and site map on smaller screens */
+                }
+            }
+    
+    </style>
+</footer>
+</html>
+
+</html>
