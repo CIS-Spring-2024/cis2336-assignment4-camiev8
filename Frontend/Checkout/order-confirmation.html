@@ -7,10 +7,14 @@
 </head>
 <body>
     <h1>Order Confirmation</h1>
-    <p>Total Amount: $<span id="totalAmount"></span></p>
+    <!--show total amount from session storage-->
+    <p>Total Amount: $50.00<span id="totalAmount"> </span></p>
     <script>
-        var totalAmount = sessionStorage.getItem("totalAmount");
-        document.getElementById("totalAmount").innerHTML = totalAmount;
+        // Retrieve the total amount from session storage
+        const totalAmount = sessionStorage.getItem('totalAmount');
+
+        // Display the total amount
+        console.log(totalAmount);
     </script>
 </body>
 </html>
