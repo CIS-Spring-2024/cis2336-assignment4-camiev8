@@ -98,6 +98,64 @@
             text-align: center;
             margin-top: 20px;
         }
+/* Modal Overlay */
+
+.modal-overlay {
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 100;
+
+}
+ 
+/* Modal Content */
+
+.modal-content {
+
+    background-color: #fff;
+
+    padding: 20px;
+
+    border-radius: 5px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    width: 80%;
+
+    max-width: 500px;
+
+    text-align: center;
+
+}
+ 
+.close-button {
+
+    float: right;
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
     </style>
 </head>
 <body>
@@ -193,9 +251,9 @@
         </form>
     </div>
     <div class="order-confirmation" id="orderConfirmation">
-        <h2>Order Confirmation</h2>
-        <p>Your order has been received. Thank you for shopping with us!</p>
-    </div>
+            <h2>Order Confirmation</h2>
+            <p>Your order has been received. Thank you for shopping with us!</p>
+        </div>
     </div>
     <script>
         document.getElementById("orderForm").addEventListener("submit", function(event){
@@ -235,6 +293,37 @@
                 }
          
                 window.onload = calculateTotal; // Calculate total on page load
+function showConfirmationModal() {
+
+    document.getElementById('orderConfirmationModal').style.display = 'flex';
+
+}
+ 
+function hideConfirmationModal() {
+
+    document.getElementById('orderConfirmationModal').style.display = 'none';
+
+}
+ 
+document.querySelector('.close-button').addEventListener('click', function() {
+
+    hideConfirmationModal();
+
+});
+ 
+async function proceedToCheckout() {
+
+    // Assuming the total has already been calculated and you're ready to checkout
+
+    showConfirmationModal();
+
+    // You might want to also send data to the server here or just confirm the action
+
+}
+ 
+document.getElementById('checkoutButton').addEventListener('click', proceedToCheckout);
+<button id="checkoutButton" type="button">Proceed to Checkout</button>
+
         </script>
     </script>
 </body>
