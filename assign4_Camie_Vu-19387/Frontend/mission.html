@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
-    <title>Contacts</title>
+    <title>Mission</title>
 </head>
 
 <!--Top nav-->
@@ -12,20 +12,20 @@
     <!-- Top nav content -->
     <div class="topnav">
         <div class="logo">
-            <a href="../homepage/homepage.html" class="active">
-                <img src="your-logo.png" alt="Logo">
+            <a href="../Frontend//homepage.html" class="active">
+                <img src="../Frontend/Images/your-logo.png" alt="Logo">
             </a>
         </div>
         <div class="dropdown">
             <button class="dropbtn">About Us</button>
             <div class="dropdown-content">
-                <a href="../About/about.html"> Overview </a>
-                <a href="../Mission/mission.html"> Our Values</a>
+                <a href="../Frontend/about.html"> Overview </a>
+                <a href="../Frontend/mission.html"> Our Values</a>
             </div>
         </div>
-        <a href="../Services/services.html">Services</a>
-        <a href="../Blogs/blogs.html">Blogs</a>
-        <a href="../Contact/contact.html">Contact</a>
+        <a href="../Frontend/products.html">Services</a>
+        <a href="../Frontend/blogs.html">Blogs</a>
+        <a href="../Frontend/contact.html">Contact</a>
         <div class="hamburger">&#9776;</div>
     </div> <!-- Hamburger icon -->
     <!-- Top nav style -->
@@ -162,29 +162,86 @@
 <body>
 <!-- Body content -->
     <div>
-        <div>
-            <p>Contact Us </p>
-            <p>Fill out the form below to get in touch with us.</p>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-                <input type="submit" value="Submit">
-            </form>
+        <div class="container">
+            <h1>Our Mission: Our Commitment to Excellence</h1>
+
+            <h2>Our Mission</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+
+            <h2>Our Vision</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+            
+            <h2>Our Goals</h2>
+            <ol class="goals-list">
+                <li><strong>Goal 1:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. </li>
+                <li><strong>Goal 2:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. </li>
+                <li><strong>Goal 3:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. </li>
+            </ol>
+
+            <h2>Our Impact</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+
+            <div class="contact-info">
+                <h2>Join Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec velit quis lectus ullamcorper tristique ac sit amet ipsum. Praesent cursus lectus nec neque rutrum egestas. Phasellus vitae mi quis arcu consequat imperdiet. Morbi convallis imperdiet lacus, eu scelerisque odio imperdiet et. Vestibulum venenatis vel turpis et semper. Mauris gravida, libero non placerat placerat, lectus est viverra ante, non maximus purus mi at purus. Mauris faucibus mattis mattis. Sed ipsum purus, tempor sit amet posuere sodales, auctor quis odio. </p>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="social-button">Facebook</a>
+                <a href="#" class="social-button">Twitter</a>
+                <a href="#" class="social-button">LinkedIn</a>
+                <a href="#" class="social-button">Instagram</a>
+            </div>
+
         </div>
+
     </div>
 <!-- Body Styling-->
     <style>
         /* Style the body */
         body {
-        background-color: black; /* Set the background color of the entire page to black */
-        color: white; /* Set the default text color to white */
-        margin: auto; /* Remove default margin */
-        padding-top: 100px; /* Remove default padding */
+            background-color: black; /* Set the background color of the entire page to black */
+            color: white; /* Set the default text color to white */
+            margin: auto; /* Remove default margin */
+            padding-top: 100px; /* Remove default padding */
+            }
+        /* Center all texts */
+        h1, h2, h3 {
+            text-align: center;
         }
+        p {
+            text-align: center;
+            padding: 0 20px; 
+        }
+        
+        /* Center the social links */
+        /* Center the social links */
+        .social-links {
+            text-align: center;
+            margin-top: 20px; /* Add some space between the content and social links */
+        }
+
+        /* Style the social link buttons */
+        .social-links a {
+            display: inline-block; /* Display as inline block to respect padding and width */
+            background-color: white; /* White background color */
+            color: black; /* Black text color */
+            padding: 10px 20px; /* Adjust padding as needed */
+            border: 1px solid black; /* Add border */
+            border-radius: 5px; /* Rounded corners */
+            margin: 0 5px; /* Add space between buttons */
+            text-decoration: none; /* Remove underline */
+            cursor: pointer;
+        }
+
+        /* Hover effect */
+        .social-links a:hover {
+            background-color: #ccc; /* Grey background on hover */
+        }
+
+
+        
+
         
     </style>
 <!-- JS script-->
@@ -222,7 +279,7 @@
 <!-- Footer -->
 <footer>
     <div class="logo-container">
-        <img src="your-logo.png" alt="Logo" class="footer-logo"> <!-- logo -->
+        <img src="../Frontend/Images/your-logo.png" alt="Logo" class="footer-logo"> <!-- logo -->
         <!-- sign up form-->
         <form class="signup-form">
             <input type="email" class="signup-input" placeholder="Enter your email">
@@ -325,4 +382,3 @@
 </html>
 
 </html>
-

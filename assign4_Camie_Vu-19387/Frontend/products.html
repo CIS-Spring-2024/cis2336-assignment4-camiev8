@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <title>Checkout</title>
+    <title>Services Menu</title>
 </head>
 
 <!--Top nav-->
@@ -135,20 +135,20 @@
     <!-- Top nav content -->
     <div class="topnav">
         <div class="logo">
-            <a href="../homepage/homepage.html" >
-                <img src="your-logo.png" alt="Logo">
+            <a href="homepage.html" >
+                <img src="../Frontend/Images/your-logo.png" alt="Logo">
             </a>
         </div>
         <div class="dropdown">
             <button class="dropbtn">About Us</button>
             <div class="dropdown-content">
-                <a href="../About/about.html"> Overview </a>
-                <a href="../Mission/mission.html"> Our Values</a>
+                <a href="../Frontend/about.html"> Overview </a>
+                <a href="../Frontend/mission.html"> Our Values</a>
             </div>
         </div>
-        <a href="../Services/services.html"class="active">Services</a>
-        <a href="../Blogs/blogs.html">Blogs</a>
-        <a href="../Contact/contact.html">Contact</a>
+        <a href="../Frontend/products.html">Services</a>
+        <a href="../Frontend/blogs.html">Blogs</a>
+        <a href="../Frontend/contact.html">Contact</a>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
     </div> 
 
@@ -206,112 +206,45 @@
 
 <!--Bodyodyodyody-->
 <body>
-    <div class="container">
-        <div class="checkout form">
-            <form id="orderForm" action="order-confirmation.html" method="POST"> <!-- Updated action attribute -->
-                <div class="row">
-                    <div class="col">
-                        <h3 class="title">Billing Address</h3>
-                        <div class="inputBox">
-                            <label for="name">Full Name:</label>
-                            <input type="text" id="name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="inputBox">
-                            <label for="email">Email:</label>
-                            <input type="text" id="email" placeholder="Enter email address" required>
-                        </div>
-                        <div class="inputBox">
-                            <label for="address">Address:</label>
-                            <input type="text" id="address" placeholder="Enter address" required>
-                        </div>
-                        <div class="inputBox">
-                            <label for="city">City:</label>
-                            <input type="text" id="city" placeholder="Enter city" required>
-                        </div>
-                        <div class="flex">
-    
-                            <div class="inputBox">
-                                <label for="state">State:</label>
-                                <input type="text" id="state" placeholder="Enter state" required>
-                            </div>
-    
-                            <div class="inputBox">
-                                <label for="zip">Zip Code:</label>
-                                <input type="number" id="zip" placeholder="123 456" required>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-                    <div class="col">
-                        <h3 class="title">Payment</h3>
-    
-                        <div class="inputBox">
-                            <label for="name">Card Accepted:</label>
-                            <img src="https://i.ibb.co/X38b5PF/card-img.png" alt="">
-                        </div>
-    
-                        <div class="inputBox">
-                            <label for="cardName">Name On Card:</label>
-                            <input type="text" id="cardName" placeholder="Enter card name" required>
-                        </div>
-    
-                        <div class="inputBox">
-                            <label for="cardNum">Credit Card Number:</label>
-                            <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required>
-                        </div>
-    
-                        <div class="inputBox">
-                            <label for="">Exp Month:</label>
-                            <select name="" id="">
-                                <option value="">Choose month</option>
-                                <option value="January">January</option>
-                                <option value="February">February</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                                <option value="May">May</option>
-                                <option value="June">June</option>
-                                <option value="July">July</option>
-                                <option value="August">August</option>
-                                <option value="September">September</option>
-                                <option value="October">October</option>
-                                <option value="November">November</option>
-                                <option value="December">December</option>
-                            </select>
-                        </div>
-    
-    
-                        <div class="flex">
-                            <div class="inputBox">
-                                <label for="">Exp Year:</label>
-                                <select name="" id="">
-                                    <option value="">Choose Year</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                    <option value="2026">2026</option>
-                                    <option value="2027">2027</option>
-                                </select>
-                            </div>
-    
-                            <div class="inputBox">
-                                <label for="cvv">CVV</label>
-                                <input type="number" id="cvv" placeholder="1234" required>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                </div>
-    
-                <input type="submit" value="Proceed to Checkout" class="submit_btn" >
-            </form>
-    
+    <!-- Main Section -->
+    <section id="main-section">
+        <div class="container">
+            <div class="main-content">
+                <h2>Welcome to Our Store</h2>
+                <p>Discover our amazing products and enjoy great discounts.</p>
+                <button class="shop-now" onclick="scrollToServices()">Shop Now</button>
+            </div>
+            <div class="main-image">
+                <img src="../Frontend/Images/main.jpg" alt="Main Image">
+            </div>
         </div>
+    </section>
+
+    <!-- Products Section -->
+    <div id="products">
+        <div id="service-menu" class="service-menu"></div>
+        <!--Select quantities-->
+        <button class='Order' onclick="window.location.href='checkout.html'"> Order now</button>
     </div>
+    
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="content">
+                <h2>How It Works</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit augue in libero vehicula, a bibendum quam fringilla. In sit amet elementum mi.</p>
+                <p>Nullam vehicula dui non augue volutpat, et egestas justo sodales. Phasellus tristique vestibulum augue vitae lacinia. Ut tempus augue a nunc blandit volutpat.</p>
+            </div>
+            <div class="image">
+                <img src="../Frontend/Images/hiw.jpg" alt="How It Works Image">
+            </div>
+        </div>
+    </section>
+
     
 <!-- Body Styling-->
     <style>
+        
     /* Style the body */
         body {
         background-color: black; /* Set the background color of the entire page to black */
@@ -319,122 +252,229 @@
         margin: auto; /* Remove default margin */
         padding-top: 100px; /* Remove default padding */
         }
-
-    /* Style for checkout container */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            border: none;
-            outline: none;
-            font-family: 'Poppins', sans-serif;
-            text-transform: capitalize;
-            transition: all 0.2s linear;
+        /* Main Section Styles */
+        #main-section {
+            background-color: none;
+            padding: 100px 0 
         }
+        
 
-        .container{
+        .container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
-            padding: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .container form {
-            width: 700px;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        .main-content {
+            flex: 0 0 45%; /* Adjust width */
         }
 
-        .container form .row{
+        .main-image {
+            flex: 0 0 45%; /* Adjust width */
+            text-align: center; /* Center align the image */
+        }
+
+        .main-image img {
+            max-width: 100%; /* Make sure the image doesn't exceed the container */
+            height: auto;
+            max-height: 300px; /* Limit the height of the image */
+        }
+         /* Style for the "Shop Now" button */
+        button.shop-now {
+            background-color: black;
+            color: #fff;
+            padding: 10px 20px;
+            border: 2px solid #fff; /* White outline */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button.shop-now:hover {
+            background-color: darkgray;
+            border-color: darkgray; /* Change outline color on hover */
+        }
+
+        button {
+            background-color: black;
+            color: #fff;
+            margin: 20px 20px 20px 20px;
+            border: solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: darkgray;
+        }
+        @media screen and (max-width: 768px) {
+        #main-section {
+            padding: 80px 0; /* Adjust padding for smaller screens */
+        }
+        }
+     /* Style for dynamic service menu */
+        .service-menu {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
         }
 
-        .container form .row .col{
-            flex: 1 1 250px;
+        .service-card {
+            width: calc(33.33% - 20px);
+            background-color: black;
+            outline: solid white;
+            padding: 20px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
-        .col .title{
-            font-size: 20px;
-            color: black;
-            padding-bottom: 5px;
-        }
-
-        .col .inputBox{
-            margin: 15px 0;
-        }
-
-        .col .inputBox label{
+        .service-card img {
+            width: 100%;
+            height: auto;
             margin-bottom: 10px;
-            display: block;
+            border-radius: 4px;
+            transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
+
         }
 
-        .col .inputBox input, .col .inputBox select{
-            width: 100%;
-            border: 1px solid #ccc;
-            padding: 10px 15px;
-            font-size: 15px;
+        .service-card:hover {
+            transform: scale(1.1); /* Scale up the service card on hover */
         }
 
-        .col .inputBox input:focus, .col .inputBox select:focus{
-            border: 1px solid #000;
+        .service-card h3 {
+            color: white;
+            margin-top: 0;
         }
 
-        .col .flex{
-            display: flex;
-            gap: 15px;
+        .service-card p {
+            color: #ccc;
         }
 
-        .col .flex .inputBox{
-            flex: 1 1;
-            margin-top: 5px;
-        }
-
-        .col .inputBox img{
-            height: 34px;
-            margin-top: 5px;
-            filter: drop-shadow(0 0 1px #000);
-        }
-
-        .container form .submit_btn{
-            width: 100%;
-            padding: 12px;
-            font-size: 17px;
-            background: black;
+        .service-card a {
             color: #fff;
-            margin-top: 5px;
-            cursor: pointer;
-            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border: 1px solid #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
-        .container form .submit_btn:hover{
-            background: whitesmoke;
+        .service-card a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+        /* How It Works Section Styles */
+        #how-it-works {
+            background-color: #f9f9f9;
+            color: black;
+            padding: 100px 0;
         }
 
-        input::-webkit-inner-spin-button,
-        input::-webkit-outer-spin-button{
-            display: none;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content {
+            flex: 0 0 50%;
+            padding-right: 50px; 
+            box-sizing: border-box;
+        }
+
+        .image {
+            flex: 0 0 50%;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        /* Text Styles */
+        #how-it-works h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #how-it-works p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
     </style>
 
 
 <!-- Body Script-->
-<script>
-    document.getElementById("orderForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent default form submission
-        console.log("Form submitted!"); // Debugging statement
-        
-        // You can add additional form validation here
-        
-        // Redirect to the order confirmation page
-        window.location.href = "order-confirmation.html";
-    });
-</script>
+    <script>
+    // Function to scroll to services section
+    function scrollToServices() {
+        var servicesSection = document.getElementById("products");
+        var offsetTop = servicesSection.offsetTop; // Get the offset of the services section
+        var scrollPosition = offsetTop - 100; // Subtract 100px to scroll just above the services section
+        window.scrollTo({ top: scrollPosition, behavior: 'smooth' }); // Scroll to the adjusted position
+    }
+    // Array of services
+    var services = [
+        { 
+            name: "Service 1", 
+            link: "service.html", 
+            image: "../Frontend/Images/service1.jpg", // Path to image for Service 1
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
+        },
+        { 
+            name: "Service 2", 
+            link: "service.html", 
+            image: "../Frontend/Images/service2.jpg", // Path to image for Service 2
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
+        },
+        { 
+            name: "Service 3", 
+            link: "service.html", 
+            image: "../Frontend/Images/service3.jpg", // Path to image for Service 3
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
+        }
+    ];
+
+        // Function to generate the service menu
+    function generateServiceMenu() {
+        var serviceMenu = document.getElementById("service-menu");
+        // Clear existing content
+        serviceMenu.innerHTML = "";
+
+        // Loop through services array and create menu items
+        services.forEach(function(service) {
+            var menuItem = document.createElement("div");
+            menuItem.classList.add("service-card");
+
+            var image = document.createElement("img");
+            image.src = service.image;
+            menuItem.appendChild(image);
+
+            var name = document.createElement("h3");
+            name.textContent = service.name;
+            menuItem.appendChild(name);
+
+            var description = document.createElement("p");
+            description.textContent = service.description;
+            menuItem.appendChild(description);
+
+
+            serviceMenu.appendChild(menuItem);
+        });
+    }
+
+    // Call the function to generate the service menu
+    generateServiceMenu();
+    </script>
 </body>
 
 <!-- Footer -->
@@ -449,11 +489,11 @@
     </div>
     <!-- sitemap-->
     <ul class="sitemap">
-        <li><a href="../Homepage/homepage.html">Home</a></li>
-        <li><a href="../About/about.html">About</a></li>
-        <li><a href="../Services/services.html"class="active">Services</a></li>
-        <li><a href="../Blogs/blogs.html">Blogs</a></li>
-        <li><a href="../Contact/contact.html">Contact</a></li>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html"class="active">Services</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
     </form>
     <style>

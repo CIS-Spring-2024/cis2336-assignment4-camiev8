@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <title>Blogs</title>
+</head>
+
+<!--Top nav-->
+<header>
+    <!-- Top nav content -->
+    <div class="topnav">
+        <div class="logo">
+            <a href="homepage.html" class="active">
+                <img src="your-logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">About Us</button>
+            <div class="dropdown-content">
+                <a href="../Frontend/about.html"> Overview </a>
+                <a href="../Frontend/mission.html"> Our Values</a>
+            </div>
+        </div>
+        <a href="../Frontend/products.html">Services</a>
+        <a href="../Frontend/blogs.html">Blogs</a>
+        <a href="../Frontend/contact.html">Contact</a>
+        <div class="hamburger">&#9776;</div>
+    </div> <!-- Hamburger icon -->
+    <!-- Top nav style -->
+    <style>
+    /* Style the navigation bar */
+        header {
+            position: fixed; /* Ensure the header remains fixed at the top of the viewport */
+            top: 0;
+            left: 0;
+            width: 100%; /* Make the header span the full width of the viewport */
+            height: auto;
+            z-index: 999; /* Ensure the header appears above other elements on the page */
+        }
+        .topnav {
+            background-color: #fff; /* White background */
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        /* Style the logo */
+        .logo img {
+            height: 40px; /* Adjust height for larger logo */
+            width: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Add some spacing between logo and links */
+        }
+        /* Style the hamburger icon */
+        .hamburger {
+            display: none; /* Hide by default on larger screens */
+            cursor: pointer;
+        }
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            color: #000; /* Black text */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative;
+        }
+        .topnav a:hover {
+            background-color: #ddd; /* Gray background on hover */
+        }
+        /* Create the moving bar */
+        .topnav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px; /* Adjust height as needed */
+            background-color: #000; /* Color of the moving bar */
+            transition: width 0.3s ease-in-out;
+        }
+        /* Change the color of links on hover and animate the moving bar */
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+            
+        }
+
+    /* Style the tabs */
+        /* Style the dropdown container */
+        .dropdown {
+            position: relative;
+            z-index: 999;
+        }
+        /* Style the dropdown button */
+        .dropbtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        /* Style the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        /* Style the links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show the dropdown content when hovering over the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            
+        }
+
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .topnav a {
+                display: none; /* Hide links on smaller screens */
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon on smaller screens */
+            }
+        }
+    </style>
+
+    <!-- Top nav script -->
+    <script>
+        // Get the "About Us" dropdown and the dropdown content
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        // Add event listeners
+        dropdown.addEventListener('mouseenter', showDropdown);
+        dropdown.addEventListener('mouseleave', hideDropdown);
+
+        // Function to show dropdown
+        function showDropdown() {
+            dropdownContent.style.display = 'block';
+        }
+        // Function to hide dropdown
+        function hideDropdown() {
+            dropdownContent.style.display = 'none';
+        }
+</script>
+
+
+</header>
+
+<body>
+<!-- Body content -->
+    <div>
+        <!-- link to blog posts-->
+        <div>
+            <button class="button" onclick="location.href='../Blogs/blogpost1.html'">Blog 1</button>
+        </div>
+    </div>
+<!-- Body Styling-->
+    <style>
+        /* Style the body */
+        body {
+        background-color: black; /* Set the background color of the entire page to black */
+        color: white; /* Set the default text color to white */
+        margin: auto; /* Remove default margin */
+        padding-top: 100px; /* Remove default padding */
+        }
+        body .button{
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: blanchedalmond;
+        }
+    </style>
+<!-- JS script-->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active-dot";
+        }
+
+    </script>
+</body>
+
+<!-- Footer -->
+<footer>
+    <div class="logo-container">
+        <img src="../Frontend/Images/your-logo.png" alt="Logo" class="footer-logo"> <!-- logo -->
+        <!-- sign up form-->
+        <form class="signup-form">
+            <input type="email" class="signup-input" placeholder="Enter your email">
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+    </div>
+    <!-- sitemap-->
+    <ul class="sitemap">
+        <li><a href="../Frontend/homepage.html">Home</a></li>
+        <li><a href="../Frontend/about.html">About</a></li>
+        <li><a href="../Frontend/services.html">Services</a></li>
+        <li><a href="../Frontend/blogs.html">Blogs</a></li>
+        <li><a href="../Frontend/contact.html">Contact</a></li>
+    </ul>
+    </form>
+    <style>
+        /* Style the footer */
+        footer {
+                background-color: white; /* Light background */
+                color: black; /* Black text */
+                padding: 20px;
+                text-align: right; /* Align text to the right */
+                position: bottom absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                box-sizing: border-box; /* Include padding and border in the total width/height */
+                display: flex;
+                justify-content: space-between; /* Align items to each end */
+                align-items: center; /* Center items vertically */
+            }
+    
+            /* Style the site map */
+            .sitemap {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+            .sitemap li {
+                margin-right: 10px;
+            }
+            .sitemap li a {
+                color: black; /* White text */
+                text-decoration: none;
+            }
+            .sitemap li a:hover {
+                text-decoration: underline;
+            }
+            /* Style the logo container */
+            .logo-container {
+                display: flex;
+                align-items: center;
+            }
+
+             /* Style the logo */
+            .footer-logo {
+                max-width: 100px; /* Limit the maximum width of the logo */
+                height: auto; /* Maintain aspect ratio */
+                margin-right: 20px;
+            }
+    
+             /* Style the sign-up form */
+             .signup-form {
+                display: inline-block;
+                margin-left: 20px;
+            }
+            .signup-input {
+                padding: 8px;
+                border: none;
+                border-radius: 4px;
+                margin-right: 5px;
+                width: 200px;
+            }
+            .signup-button {
+                background-color: grey; /* Grey background */
+                color: white;
+                padding: 8px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .signup-button:hover {
+                background-color: darkgray; /* Darker grey background on hover */
+            }
+    
+            /* Media query for smaller screens */
+            @media screen and (max-width: 300px) {
+                footer {
+                    padding: 10px; /* Reduce padding for smaller screens */
+                }
+            .logo-container,
+                .sitemap {
+                    margin-bottom: 10px; /* Add spacing between the logo and site map on smaller screens */
+                }
+            }
+    
+    </style>
+</footer>
+</html>
+
+</html>
+
+<!---------------------->
+
+
+

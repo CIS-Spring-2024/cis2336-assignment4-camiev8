@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
-    <title>Homepage</title>
+    <title>Contacts</title>
 </head>
 
 <!--Top nav-->
 <header>
+    <!-- Top nav content -->
+    <div class="topnav">
+        <div class="logo">
+            <a href="homepage.html" class="active">
+                <img src="your-logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">About Us</button>
+            <div class="dropdown-content">
+                <a href="../Frontend/about.html"> Overview </a>
+                <a href="../Frontend/mission.html"> Our Values</a>
+            </div>
+        </div>
+        <a href="../Frontend/products.html">Services</a>
+        <a href="../Frontend/blogs.html">Blogs</a>
+        <a href="../Frontend/contact.html">Contact</a>
+        <div class="hamburger">&#9776;</div>
+    </div> <!-- Hamburger icon -->
     <!-- Top nav style -->
     <style>
     /* Style the navigation bar */
@@ -37,7 +56,6 @@
         .hamburger {
             display: none; /* Hide by default on larger screens */
             cursor: pointer;
-            color: #000;
         }
         /* Style the links inside the navigation bar */
         .topnav a {
@@ -117,26 +135,6 @@
             }
         }
     </style>
-    
-    <!-- Top nav content -->
-    <div class="topnav">
-        <div class="logo">
-            <a href="../homepage/homepage.html" class="active">
-                <img src="your-logo.png" alt="Logo">
-            </a>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">About Us</button>
-            <div class="dropdown-content">
-                <a href="../About/about.html"> Overview </a>
-                <a href="../Mission/mission.html"> Our Values</a>
-            </div>
-        </div>
-        <a href="../Services/services.html">Services</a>
-        <a href="../Blogs/blogs.html">Blogs</a>
-        <a href="../Contact/contact.html">Contact</a>
-        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
-    </div> 
 
     <!-- Top nav script -->
     <script>
@@ -156,186 +154,39 @@
         function hideDropdown() {
             dropdownContent.style.display = 'none';
         }
-    </script>
+</script>
 
 
 </header>
 
 <body>
-<!-- Slider-->
-    <div class="slider-container">
-        <!-- Slides -->
-        <div class="slide">
-            <img src="slide1.jpg" alt="Slide 1">
-        </div>
-        <div class="slide">
-            <img src="slide2.jpg" alt="Slide 2">
-            <a href="about_us_page.html" class="slide-button">About Us</a>
-
-        </div>
-        <div class="slide">
-            <img src="slide3.jpg" alt="Slide 3">
-        </div>
-        <!-- Previous and next buttons -->
-        <button class="prev" onclick="plusSlides(-1)">❮</button>
-        <button class="next" onclick="plusSlides(1)">❯</button>
-        <!-- Dots -->
-        <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+<!-- Body content -->
+    <div>
+        <div>
+            <p>Contact Us </p>
+            <p>Fill out the form below to get in touch with us.</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </div>
-        
-<!-- About us section-->
-    <div class="about-section" id="about">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo eu justo vehicula tristique. Nullam id sapien felis. Integer posuere metus non leo sollicitudin, sit amet tincidunt nunc condimentum.</p>
-        <p>Etiam ac mi et nisl finibus suscipit. Proin nec tristique ligula. Nam congue quam nisl, nec dignissim magna pharetra sit amet. Sed maximus eros non augue ullamcorper, eget dapibus urna volutpat.</p>
-        <!-- Button to link to another page -->
-        <a href="../About/about.html" class="button">Learn More</a>
-    </div>
-
-<!-- Company Mission Values section -->
-    <div class="mission-values-section">
-        <h2>Our Mission & Values</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo eu justo vehicula tristique. Nullam id sapien felis. Integer posuere metus non leo sollicitudin, sit amet tincidunt nunc condimentum.</p>
-        <p>Etiam ac mi et nisl finibus suscipit. Proin nec tristique ligula. Nam congue quam nisl, nec dignissim magna pharetra sit amet. Sed maximus eros non augue ullamcorper, eget dapibus urna volutpat.</p>
-    </div>
-
-
 <!-- Body Styling-->
     <style>
-    /* Style the body */
+        /* Style the body */
         body {
-            background-color: black; /* Set the background color of the entire page to black */
-            color: white; /* Set the default text color to white */
-            margin: auto; /* Remove default margin */
-            padding-top: 100px; 
+        background-color: black; /* Set the background color of the entire page to black */
+        color: white; /* Set the default text color to white */
+        margin: auto; /* Remove default margin */
+        padding-top: 100px; /* Remove default padding */
         }
-    /* Slider Stylez */
-        /* Style the slider container */
-        .slider-container {
-            max-width: 800px;
-            position: relative;
-            margin: auto;
-            overflow: hidden;
-            padding: 25px;
-        }
-        /* Style the slides */
-        .slide {
-            display: none;
-            width: 100%;
-        }
-        /* Styles for the slide content */
-        .slide-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            flex-direction: column;
-        }
-        /* Style the images inside the slides */
-        .slide img {
-            width: 100%;
-        }
-        /* Style the navigation buttons */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            z-index: 2;
-        }
-        .prev {
-            left: 0;
-        }
-        .next {
-            right: 0;
-        }
-        /* Style the dots */
-        .dot-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .active-dot {
-            background-color: #717171;
-        }
-
-        /* Style the button */
-        .slide-button {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #0f1638; 
-            color: #fff; /* White text */
-            padding: 10px 20px;
-            border: #5d6694;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            z-index: 1; /* Ensure button is above the image */
-        }
-        .slide-button:hover {
-            background-color: #5d6694; /* Light blue background on hover */
-        }
-
-    /* Style the About Us section */
-        .about-section {
-            background-color: #f2f2f2; /* Light gray background */
-            padding: 50px;
-            text-align: center;
-            margin-top: 60px; /* Ensure content is below the fixed top navigation bar */
-        }
-        .about-section h2 {
-            color: #333; /* Dark text */
-        }
-        .about-section p {
-            color: #666; /* Medium gray text */
-        }
-        /* Style the button */
-        .button {
-            display: inline-block;
-            background-color: black; /* Black background */
-            color: #fff; /* White text */
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #5d6694; 
-        }
-
-    /* Style the mission values section */
-    .mission-values-section {
-            background-color: #f9f9f9; /* Light gray background */
-            padding: 50px;
-            text-align: center;
-        }
-        .mission-values-section h2 {
-            color: #333; /* Dark text */
-        }
-        .mission-values-section p {
-            color: #666; /* Medium gray text */
-        }
+        
     </style>
-
-    
 <!-- JS script-->
     <script>
         let slideIndex = 1;
@@ -474,3 +325,4 @@
 </html>
 
 </html>
+
