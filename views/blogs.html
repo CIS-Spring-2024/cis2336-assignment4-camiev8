@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/styles/shared.css"> <!-- Common styles -->
+    <link rel="stylesheet" href="/public/styles/about.css"> <!-- Specific styles for About page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Blogs</title>
+</head>
+<body>
+<header>
+    <div class="topnav">
+        <div class="logo">
+            <a href="../views/index.html">
+                <img src="/public/images/your-logo.png" alt="Logo">
+            </a>
+        </div>
+        <a href="../views/index.html">About Us</a>
+        <a href="../views/blogs.html">Blogs</a>
+        <a href="../views/products.html">Products and Services</a>
+        <a href="../views/contact.html">Contact</a>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+</header>
+
+<main>
+    <section class="blog-container">
+        <article>
+            <h1>Blog Post #1</h1>
+            <p>Author: John Doe</p>
+            <p>Published: 01-01-2023</p>
+            <p>Tags: tag1, tag2, tag3</p>
+            <p>Description: This is a summary of what the blog post is about. Full article available upon clicking.</p>
+            <p>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat consequat elit...</p>
+        </article>
+        <!-- Placeholder for more blog posts -->
+        <button onclick="contactPopup()">Submit Your Own Blog</button>
+    </section>
+</main>
+
+<footer>
+    <div class="logo-container">
+        <img src="../public/images/your-logo.png" alt="Logo" class="footer-logo">
+        <form class="signup-form">
+            <input type="email" class="signup-input" placeholder="Enter your email">
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+    </div>
+    <ul class="sitemap">
+        <li><a href="../views/index.html">Home</a></li>
+        <li><a href="../views/index.html">About</a></li>
+        <li><a href="../views/products.html">Products and Services</a></li>
+        <li><a href="../views/blogs.html">Blogs</a></li>
+        <li><a href="../views/contact.html">Contact</a></li>
+    </ul>
+    <footer>
+        <div class="logo-container">
+            <img src="../public/images/your-logo.png" alt="Logo" class="footer-logo">
+            <form class="signup-form">
+                <input type="email" class="signup-input" placeholder="Enter your email">
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+        </div>
+        <ul class="sitemap">
+            <li><a href="../views/index.html">Home</a></li>
+            <li><a href="../views/index.html">About</a></li>
+            <li><a href="../views/products.html">Products and Services</a></li>
+            <li><a href="../views/blogs.html">Blogs</a></li>
+            <li><a href="/views/contact.html">Contact</a></li>
+        </ul>
+    </footer>
+    
+    <script src="/public/scripts/navigation.js"></script>
+    <script>
+        function toggleMenu() {
+            var x = document.querySelector(".topnav");
+            if (x.classList.contains("responsive")) {
+                x.classList.remove("responsive");
+            } else {
+                x.classList.add("responsive");
+            }
+        }
+    </script>
+    </body>
+    </html>
+    

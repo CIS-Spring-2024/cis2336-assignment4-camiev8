@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles/shared.css">
+    <link rel="stylesheet" href="/public/styles/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+
+        /* Style the navigation bar */
+        header {
+            position: fixed; /* Ensure the header remains fixed at the top of the viewport */
+            top: 0;
+            left: 0;
+            width: 100%; /* Make the header span the full width of the viewport */
+            height: auto;
+            z-index: 999; /* Ensure the header appears above other elements on the page */
+        }
+        .topnav {
+            background-color: #fff; /* White background */
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        /* Style the logo */
+        .logo img {
+            height: 40px; /* Adjust height for larger logo */
+            width: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Add some spacing between logo and links */
+        }
+        /* Style the hamburger icon */
+        .hamburger {
+            display: none; /* Hide by default on larger screens */
+            cursor: pointer;
+            color: #000;
+        }
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            color: #000; /* Black text */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative;
+        }
+        .topnav a:hover {
+            background-color: #ddd; /* Gray background on hover */
+        }
+        /* Create the moving bar */
+        .topnav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px; 
+            background-color: #000; /* Color of the moving bar */
+            transition: width 0.3s ease-in-out;
+        }
+        /* Change the color of links on hover and animate the moving bar */
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+            
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+            padding: 50px;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            background-color: rgba(0,0,0,0.6);
+            border: none;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 6px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        .about-section, .mission-values-section {
+            display: auto;
+            background-color: #222;
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        footer .logo-container img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <div class="logo">
+                <a href="/views/index.html">
+                    <img src="/public/images/your-logo.png" alt="Logo">
+                </a>
+            </div>
+            <a href="/views/index.html">Home</a>
+            <a href="/views/blogs.html">Blogs</a>
+            <a href="/views/products.html">Products and Services</a>
+            <a href="/views/contact.html">Contact</a>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        </div>
+    </header>
+    <div class="slider-container">
+        <div class="slide active">
+            <img src="../public/images/slide1.jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="../public/images/slide2.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="../public/images/slide3.jpg" alt="Slide 3">
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span the="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    <div class="about-section" id="about">
+        <h2>About Us</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla est eu commodo ornare. Morbi in viverra magna. Nullam arcu erat, blandit feugiat sapien eu, facilisis bibendum odio. Aliquam diam ex, vulputate non nunc sit amet, cursus placerat lorem. In viverra arcu nisi, nec varius mi ultrices ut. Ut dolor neque, maximus ornare fermentum sed, porttitor eu ante. Sed quis vehicula purus. Cras fringilla, lorem at congue eleifend, nisi sapien posuere sem, non sodales turpis lectus vitae odio. Vivamus nec eros sed nulla hendrerit sodales. Praesent pharetra nisl eu quam auctor, id interdum mi fringilla. Morbi in dignissim odio. Aliquam sit amet cursus nibh.
+
+            Quisque non enim eu magna imperdiet volutpat vitae at odio. Vestibulum egestas leo eros, a egestas leo laoreet interdum. Maecenas neque arcu, dictum at sodales scelerisque, gravida sit amet nunc. Suspendisse pulvinar quam libero, vitae tristique mi bibendum at. Maecenas lacus ipsum, aliquet vitae tortor eu, facilisis pulvinar sapien. Duis varius nisl cursus, vestibulum sapien at, dictum nunc. Aenean pretium ligula eros. Nulla mi massa, malesuada quis turpis nec, feugiat ornare lacus. Aliquam id iaculis nisl. Sed lobortis bibendum odio, ut lacinia orci ornare eget. Donec venenatis felis nunc, a dapibus mi lacinia scelerisque. Vestibulum vestibulum, eros et placerat dictum, tortor purus placerat sapien, eget posuere ipsum orci condimentum felis. Sed convallis ligula ut ligula cursus maximus. Morbi facilisis lacus nec leo lobortis euismod. Aliquam erat volutpat.
+            
+            </p>
+    </div>
+
+    <div class="mission-values-section">
+        <h2>Our Mission & Values</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla est eu commodo ornare. Morbi in viverra magna. Nullam arcu erat, blandit feugiat sapien eu, facilisis bibendum odio. Aliquam diam ex, vulputate non nunc sit amet, cursus placerat lorem. In viverra arcu nisi, nec varius mi ultrices ut. Ut dolor neque, maximus ornare fermentum sed, porttitor eu ante. Sed quis vehicula purus. Cras fringilla, lorem at congue eleifend, nisi sapien posuere sem, non sodales turpis lectus vitae odio. Vivamus nec eros sed nulla hendrerit sodales. Praesent pharetra nisl eu quam auctor, id interdum mi fringilla. Morbi in dignissim odio. Aliquam sit amet cursus nibh.</p>
+    </div>
+
+    <footer>
+        <div class="logo-container">
+            <img src="/public/images/your-logo.png" alt="Footer Logo">
+            <form class="signup-form">
+                <input type="email" class="signup-input" placeholder="Enter your email">
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+        </div>
+        <ul class="sitemap">
+            <li><a href="/views/index.html">Home</a></li>
+            <li><a href="/views/index.html">About</a></li>
+            <li><a href="/views/products.html">Products and Services</a></li>
+            <li><a href="/views/blogs.html">Blogs</a></li>
+            <li><a href="/views/contact.html">Contact</a></li>
+        </ul>
+    </footer>
+    <script src="/public/scripts/navigation.js"></script>
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector(".topnav");
+            nav.classList.toggle("responsive");
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Products and Services</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <style>
+        header {
+            color: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 8;
+            background-color: #fff;
+        }
+        .topnav {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+            margin-right: 20px;
+        }
+        .topnav a {
+            color: #000;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative;
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+        }
+        .topnav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #000;
+            transition: width 0.3s ease-in-out;
+        }
+        .topnav a:hover::after,
+        .topnav a.active::after {
+            width: 100%;
+        }
+        @media screen and (max-width: 800px) {
+            .hamburger {
+                display: block;
+                position: absolute;
+                cursor: pointer;
+                top: 20px;
+                left: 20px;
+                z-index: 11;
+                color: black;
+            }
+            .topnav a {
+                display: none;
+            }
+        }
+    </style>
+    <div class="topnav">
+        <div class="logo">
+            <a href="index.html"><img src="../public/images/your-logo.png" alt="Logo"></a>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="../views/products.html" class="active">Products and Services</a>
+        <a href="../views/blogs.html">Blogs</a>
+        <a href="../views/contact.html">Contact</a>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var x = document.querySelector(".topnav");
+            if (x.classList.contains("responsive")) {
+                x.classList.remove("responsive");
+            } else {
+                x.classList.add("responsive");
+            }
+        }
+    </script>
+</header>
+
+<main>
+    <section id="main-section">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+            <div class="main-content" style="flex: 0 0 45%;">
+                <h2>Welcome to Our Store</h2>
+                <p>Discover our amazing products and enjoy great discounts.</p>
+                <button class="shop-now" onclick="window.location.href='checkout.html'">Shop Now</button>
+            </div>
+            <div class="main-image" style="flex: 0 0 45%; text-align: center;">
+                <img src="../public/images/main.jpg" alt="Main Image" style="max-width: 100%; height: auto; max-height: 300px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" style="background-color: #f9f9f9; color: black; padding: 100px 0;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+            <div class="content" style="flex: 0 0 50%; padding-right: 50px;">
+                <h2>How It Works</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit augue in libero vehicula, a bibendum quam fringilla. In sit amet elementum mi.</p>
+                <p>Nullam vehicula dui non augue volutpat, et egestas justo sodales. Phasellus tristique vestibulum augue vitae lacinia. Ut tempus augue a nunc blandit volutpat.</p>
+            </div>
+            <div class="image" style="flex: 0 0 50%;">
+                <img src="../Public/images/hiw.jpg" alt="How It Works Image" style="width: 100%;">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer style="background-color: white; color: black; padding: 20px; text-align: right; position: absolute fixed; left: 0; bottom: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;">
+    <div class="logo-container" style="display: flex; align-items: center;">
+        <img src="../Public/images/your-logo.png" alt="Logo" class="footer-logo" style="max-width: 100px; height: auto; margin-right: 20px;">
+        <form class="signup-form" style="display: inline-block; margin-left: 20px;">
+            <input type="email" class="signup-input" placeholder="Enter your email" style="padding: 8px; border: none; border-radius: 4px; margin-right: 5px; width: 200px;">
+            <button type="submit" class="signup-button" style="background-color: grey; color: white; padding: 8px 20px; border: none; border-radius: 4px; cursor: pointer;">Sign Up</button>
+        </form>
+    </div>
+    <ul class="sitemap" style="list-style-type: none; padding: 0; margin: 0; display: flex;">
+        <li style="margin-right: 10px;"><a href="index.html" style="color: black; text-decoration: none;">About Us</a></li>
+        <li style="margin-right: 10px;"><a href="../views/products.html" style="color: black; text-decoration: none;">Products and Services</a></li>
+        <li style="margin-right: 10px;"><a href="../views/blogs.html" style="color: black; text-decoration: none;">Blogs</a></li>
+        <li><a href="../views/contact.html" style="color: black; text-decoration: none;">Contact</a></li>
+    </ul>
+</footer>
+</body>
+</html>
